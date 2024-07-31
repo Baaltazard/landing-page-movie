@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Baltazard</a>
+      <div class="toggle"><img src="assets/toggle.png" alt="" /></div>
+    </header>
+    <div class="banner">
+      <div class="content">
+        <h2>To Infinity <span>and Beyond</span></h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eaque eligendi libero ipsam sint reprehenderit deleniti neque. Officiis.</p>
+        <a href="#" class="play" onclick="toggle();"><img src="assets/play.png" alt="" />Watch Trailer</a>
+        <div class="slide"></div>
+        <ul class="sci">
+          <li>
+            <a href="#"><img src="assets/facebook.png" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="assets/instagram.png" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="assets/twitter.png" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="trailer hidden">
+      <video src="assets/Lightyear _ Trailer.mp4" controls="true"></video>
+      <img src="assets/close.png" onclick="toggle2();" class="close" onclick="toggle();" />
+    </div>
+    <script type="text/javascript">
+      function toggle() {
+        var trailer = document.querySelector('.trailer');
+        var video = document.querySelector('video');
+        video.currentTime = 0;
+        video.pause();
+        trailer.classList.toggle('active');
+        trailer.classList.remove('hidden');
+      }
+      function toggle2() {
+        var trailer = document.querySelector('.trailer');
+        trailer.classList.toggle('hidden');
+        trailer.classList.remove('active');
+      }
+    </script>
+  </body>
+</html>
